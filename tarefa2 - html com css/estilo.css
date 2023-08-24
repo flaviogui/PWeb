@@ -1,0 +1,13 @@
+p.verso{
+    color: blue;
+}
+
+p.mote{
+    color:red
+}
+
+img{
+    border-radius: 50%;
+    height: 95px;
+    width: 95px;
+  }
