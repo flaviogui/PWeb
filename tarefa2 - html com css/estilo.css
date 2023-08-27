@@ -6,6 +6,7 @@ p.mote{
     color:red
 }
 
+div.poeta
 img{
     border-radius: 50%;
     height: 100px;
@@ -31,3 +32,33 @@ p.estilolink
       a:active {
         color: blue;
       }
+
+
+    div.personCervejas
+    table {
+        width: 500px;
+    }
+    
+    th, td {
+        text-align: left;
+        padding: 20px;
+    }
+    
+    th {
+        background-color: rgb(255, 115, 0);
+        color: white;
+        font-weight: bold;
+        font-size: large;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    td a:hover {
+        color: rgb(255, 115, 0);
+    }
