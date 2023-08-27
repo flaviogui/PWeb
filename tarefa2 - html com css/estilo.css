@@ -8,6 +8,26 @@ p.mote{
 
 img{
     border-radius: 50%;
-    height: 95px;
-    width: 95px;
+    height: 100px;
+    width: 100px;
   }
+
+p.estilolink
+    a:link {
+        color: red;
+      }
+      
+      /* visited link */
+      a:visited {
+        color: green;
+      }
+      
+      /* mouse over link */
+      a:hover {
+        color: rgb(255, 230, 105);
+      }
+      
+      /* selected link */
+      a:active {
+        color: blue;
+      }
