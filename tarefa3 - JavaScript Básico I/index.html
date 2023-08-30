@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-
 <html>   
-   <head>
+<head>
     <meta charset="UTF-8">      
-   </head>
-   <body>
-    <div id="meu amor"><button id="botaoCarregar">Carregando cervejas...</button></div>            
-   </body>   
-   <script>
-    function carregarDiv(){
-        let div = document.getElementById("meu amor")
-        div.innerHTML = `<h1>Guinness</h1>`
+</head>
+<body>
+    <div id="botaoDiv">
+        <button id="botaoCarregar">Carregando cervejas...</button>
+    </div>
+    <div id="nomeCervejaDiv"></div>            
+</body>   
+<script>
+    let nomeCervejaExibido = false;
+
+    function carregarDiv() {
+        let nomeCervejaDiv = document.getElementById("nomeCervejaDiv");
+        
+        if (nomeCervejaExibido) {
+            nomeCervejaDiv.innerHTML = "";
+            nomeCervejaExibido = false;
+        } else {
+            nomeCervejaDiv.innerHTML = `<h1>Guinness</h1>`;
+            nomeCervejaExibido = true;
+        }
     }
-    let botao = document.getElementById("botaoCarregar")
-    botao.addEventListener("click", carregarDiv)                 
-   </script>
+
+    let botao = document.getElementById("botaoCarregar");
+    botao.addEventListener("click", carregarDiv);                 
+</script>
 </html>
+
