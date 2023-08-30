@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>   
 <head>
-    <meta charset="UTF-8">      
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div id="botaoDiv">
         <button id="botaoCarregar">Carregando cervejas...</button>
     </div>
-    <div id="nomeCervejaDiv"></div>            
-</body>   
-<script>
-    let nomeCervejaExibido = false;
+    <div id="nomeCervejaDiv"></div>
+    <script>
+        let nomeCervejaExibido = false;
+        const nomeCervejaDiv = document.getElementById("nomeCervejaDiv");
 
-    function carregarDiv() {
-        let nomeCervejaDiv = document.getElementById("nomeCervejaDiv");
-        
-        if (nomeCervejaExibido) {
-            nomeCervejaDiv.innerHTML = "";
-            nomeCervejaExibido = false;
-        } else {
-            nomeCervejaDiv.innerHTML = `<h1>Guinness</h1>`;
-            nomeCervejaExibido = true;
+        function carregarDiv() {
+            if (nomeCervejaExibido) {
+                nomeCervejaDiv.style.opacity = 0;
+                setTimeout(() => {
+                    nomeCervejaDiv.innerHTML = "";
+                    nomeCervejaDiv.style.opacity = 1;
+                    nomeCervejaExibido = false;
+                }, 500); // Tempo correspondente à duração da transição
+            } else {
+                nomeCervejaDiv.style.opacity = 0;
+                setTimeout(() => {
+                    nomeCervejaDiv.innerHTML = `<h1>Guinness</h1>`;
+                    nomeCervejaDiv.style.opacity = 1;
+                    nomeCervejaExibido = true;
+                }, 500); // Tempo correspondente à duração da transição
+            }
         }
-    }
 
-    let botao = document.getElementById("botaoCarregar");
-    botao.addEventListener("click", carregarDiv);                 
-</script>
+        let botao = document.getElementById("botaoCarregar");
+        botao.addEventListener("click", carregarDiv);                 
+    </script>
+</body>
 </html>
-
