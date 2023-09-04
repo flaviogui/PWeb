@@ -1,0 +1,24 @@
+#tabelaDiv {
+    margin: 20px;
+    border: 1px solid #2d1bd2f6;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 400px; 
+   overflow-x: auto;
+ }
+ 
+ #tabelaCervejas {
+    width: 100%;
+    border-collapse: collapse;
+ }
+ 
+ #tabelaCervejas th, #tabelaCervejas td {
+    border: 1px solid #13eaea;
+    padding: 8px;
+    text-align: left;
+ }
+ 
+ #tabelaCervejas th {
+    background-color: #7ee80d;
+    font-weight: bold;
+ }
