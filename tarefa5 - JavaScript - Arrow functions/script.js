@@ -23,12 +23,5 @@ let sorvetes = ["Haagen Dazs", "Ben & Jerrys", "Sorvelândia"];
 
             carregarTabela(); // atualiza a tabela após o embaralhamento
         }
-
-        let botaoCarregar = document.getElementById("botaoCarregar");
-        botaoCarregar.addEventListener("click", carregarTabela);
-
-        let botaoOrdenar = document.getElementById("botaoOrdenar");
-        botaoOrdenar.addEventListener("click", ordenarSorvetes);
-
-        let botaoEmbaralhar = document.getElementById("botaoEmbaralhar");
-        botaoEmbaralhar.addEventListener("click", embaralharSorvetes);
+        
+        
