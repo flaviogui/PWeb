@@ -2,11 +2,26 @@
 
 <html>   
    <head>
-        <meta charset="UTF-8">      
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles.css">      
    </head>
    <body>
-      <div><button id="botaoCarregar">Carregando cervejas...</button></div>
-      <div id="meu amor"></div>            
+      <div id="tabelaDiv">
+         <table id="tabelaSorvetes">
+             <thead>
+                 <tr>
+                     <th>Nome do Sorvete</th>
+                 </tr>
+             </thead>
+             <tbody>
+             </tbody>
+         </table>
+     </div>
+ 
+     <a href="#" onclick="carregarTabela();">Carregar Sorvetes</a>
+     <a href="#" onclick="ordenarSorvetes();">Ordenar Sorvetes</a>
+     <a href="#" onclick="embaralharSorvetes();">Embaralhar Sorvetes</a>
+           
    </body>   
 
    <script src = "script.js" ></script>
