@@ -1,26 +1,30 @@
 let cervejas = [
-    {
-       name: "Guiness", 
-       alcohol: "10%"            
-    }, 
-    {
+   {
+       name: "Guiness",
+       alcohol: "10%"
+   },
+   {
        name: "Desperados",
-       alcohol: "6%"             
-    }, 
-    {
+       alcohol: "6%"
+   },
+   {
        name: "Becks",
-       alcohol: "5%"             
-    }
- ]
+       alcohol: "5%"
+   }
+]
 
- //cs é um array de cervejas
+const carregarTabela = (cs) => {
+   const tbody = document.getElementById("cervejasBody");
+   const tabela = document.getElementById("cervejasTable");
 
- const carregarDiv = cs => {
-    const div = document.getElementById("cervejasDiv")
-    const itensHtml = cs.map( item => `<div>${item['name']} -- ${item['alcohol']}</div>` ) 
-    div.innerHTML = `${itensHtml.join("\n")}`
- }
+   tabela.style.display = "block"; 
 
+   const linhas = cs.map((item) => {
+       return `<tr><td>${item.name}</td><td>${item.alcohol}</td></tr>`;
+   });
 
- let botao = document.getElementById("botaoCarregar")
- botao.addEventListener("click", () => carregarDiv(cervejas) )
+   tbody.innerHTML = linhas.join("");
+}
+
+let botao = document.getElementById("botaoCarregar");
+botao.addEventListener("click", () => carregarTabela(cervejas));
