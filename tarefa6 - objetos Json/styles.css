@@ -3,7 +3,7 @@
    
     border-collapse: collapse;
         width: 0;
-        margin: 20px 0; /* Remova o 'auto' e defina as margens superior e inferior */
+        margin: 20px 0; 
         float: left; 
     }
     
