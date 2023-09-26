@@ -1,15 +1,21 @@
 let cervejas = [
     {
         name: "Guiness",
-        alcohol: "10%"
+        alcohol: "10%",
+        style: "Red Ale",
+        ibu: "35"
     },
     {
         name: "Desperados",
-        alcohol: "6%"
+        alcohol: "6%",
+        style: "English IPA",
+        ibu: "17"
     },
     {
         name: "Becks",
-        alcohol: "5%"
+        alcohol: "5%",
+        style: "Imperial Stout",
+        ibu: "60"
     }
  ]
  
@@ -20,7 +26,7 @@ let cervejas = [
     tabela.style.display = "block"; 
  
     const linhas = cs.map((item) => {
-        return `<tr><td>${item.name}</td><td>${item.alcohol}</td></tr>`;
+        return `<tr><td>${item.name}</td><td>${item.alcohol}</td><td>${item.style}</td><td>${item.ibu}</td></tr>`;
     });
  
     tbody.innerHTML = linhas.join("");
