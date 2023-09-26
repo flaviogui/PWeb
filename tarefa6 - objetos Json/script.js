@@ -30,6 +30,10 @@ let cervejas = [
     });
  
     tbody.innerHTML = linhas.join("");
+
+    const elemento = document.getElementById(elementoId);
+    elemento.innerHTML = "";
+    elemento.appendChild(tabela);
  }
  
  let botao = document.getElementById("botaoCarregar");
