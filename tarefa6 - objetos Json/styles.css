@@ -1,0 +1,38 @@
+#cervejasTable {
+    
+   
+    border-collapse: collapse;
+        width: 0;
+        margin: 20px 0; /* Remova o 'auto' e defina as margens superior e inferior */
+        float: left; 
+    }
+    
+    #cervejasTable th, #cervejasTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    
+    #cervejasTable th {
+        background-color: #102cf9;
+        width: auto;
+    }
+    
+    #cervejasTable tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    #cervejasTable tr:hover {
+        background-color: #ddd;
+    }
+    
+    /* Estilos para o botão */
+    #botaoCarregar {
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
