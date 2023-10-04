@@ -12,8 +12,10 @@ let cervejas = []
          let res = await fetch("https://random-data-api.com/api/v2/beers?size=3")
          cervejas = await res.json()
          carregarDiv(cervejas)
+         document.getElementById("errorText").innerHTML = "";
       } catch (err) {
-         document.getElementById("cervejasDiv").innerHTML = "Fudeu..."
+         document.getElementById("cervejasDiv").innerHTML = "";
+         document.getElementById("errorText").innerHTML = "Fudeu..."
       }
    }
 
