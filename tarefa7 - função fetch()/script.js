@@ -3,7 +3,7 @@ let cervejas = []
    //cs é um array de cervejas
    const carregarDiv = cs => {
       const div = document.getElementById("cervejasDiv")
-      const itensHtml = cs.map(({ name, alcohol }) => `<div>${name} -- ${alcohol}</div>`)
+      const itensHtml = cs.map(({ name, alcohol, ibu, style }) => `<div>${name} -- ${alcohol} -- ${ibu} -- ${style}</div>`)
       div.innerHTML = `${itensHtml.join("\n")}`
    }
 
