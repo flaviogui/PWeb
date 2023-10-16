@@ -10,26 +10,19 @@
       <script src="libs/react.js"></script>
       <script src="libs/react-dom.js"></script>
       <script src="libs/babel.js"></script>
-      <script>
     
-    ReactDOM.render(
-        React.createElement(
-    'table',
-   {id: 'tabela', border:'1'},
-   React.createElement(
-    'tr',
-    null,                  
-    React.createElement('th', null, 'Nome'),
-    React.createElement('th', null, 'Marca')
-   ),
-   React.createElement(
-    'tr',
-    null,                  
-    React.createElement('td', null, 'Havana'),
-    React.createElement('td', null, 'Engenho Anísio Santiago')
-   )
-),
-document.getElementById("app"))
-      </script>
+    
+    <script type="text/babel">
+        ReactDOM.render(
+        <div id="app">
+            <table id="tabela" border="1">
+                <tr><th>Nome</th><th>Marca</th></tr>
+                <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+            </table>
+        </div>
+        ,
+        document.getElementById("app"))
+    </script>
+      
    </body>
 </html>
