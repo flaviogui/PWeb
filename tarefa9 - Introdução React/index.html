@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>ReactZero</title>      
+      <title>ReactZero</title>
+      <link rel="stylesheet" href="styles.css">       
    </head>
    <body>
       <div id="app">
@@ -9,18 +10,36 @@
       <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
       <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
       <script>
+        const createElement = React.createElement;
+
+        const th1 = createElement('th', null, 'Nome');
+        const th2 = createElement('th', null, 'Endereço');
+
+        const tr1 = createElement('tr', null,
+            createElement('td', null, 'Flávio'),
+            createElement('td', null, 'Rua Plácido, 54, São José - PB'),
+        );
+
+        const tr2 = createElement('tr', null,
+            createElement('td', null, 'João'),
+            createElement('td', null, 'Rua Euclides, 101, Caicó - PB'),
+        );
+
+        const tr3 = createElement('tr', null,
+            createElement('td', null, 'Vitor'),
+            createElement('td', null, 'Rua Wifi, 207, Caicó - PB'),
+        );
+
+        const thead = createElement('thead', null,
+            createElement('tr', null, th1, th2)
+         );
+
+        const tbody = createElement('tbody', null, tr1, tr2, tr3);
+        const table = createElement('table', null, thead, tbody);
+
+
          ReactDOM.render(
-            React.createElement(
-               'h1',
-               {id: 'my-heading'},
-               React.createElement(
-                  'span',
-                  null,
-                  'React ',
-                  React.createElement('em', null, 'é muito'),
-               ),
-               ' massa!'
-            ),
+            table,
             document.getElementById("app"))
       </script>
    </body>
