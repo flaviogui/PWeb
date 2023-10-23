@@ -16,6 +16,7 @@
           render() {
             return (
               <div>
+                <h1>{this.props.titulo}</h1>
                 <table id="tabela" border="1">
                   <thead>
                     <tr><th>Nome</th><th>Marca</th></tr>
@@ -29,13 +30,6 @@
           }
         }
 
-        class Cabecalho extends React.Component {
-          render() {
-            return (
-              <h1>Tabela de Bebidas</h1>
-            );
-          }
-        }
 
         class Rodape extends React.Component {
           render() {
@@ -47,8 +41,7 @@
 
         ReactDOM.render(
           <div>
-            <Cabecalho />
-            <TabelaBebidas />
+            <TabelaBebidas titulo="Tabela de Cana" />
             <Rodape />
           </div>,
           document.getElementById("app")
