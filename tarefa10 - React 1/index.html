@@ -11,17 +11,22 @@
       <script src="libs/react-dom.js"></script>
       <script src="libs/babel.js"></script>
     
-    
     <script type="text/babel">
+        // Defina a função TabelaBebidas que retorna o HTML da tabela
+        function TabelaBebidas() {
+            return (
+                <table id="tabela" border="1">
+                    <tr><th>Nome</th><th>Marca</th></tr>
+                    <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+                </table>
+            );
+        }
+
+        // Chame a função TabelaBebidas no ReactDOM.render
         ReactDOM.render(
-        <div id="app">
-            <table id="tabela" border="1">
-                <tr><th>Nome</th><th>Marca</th></tr>
-                <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
-            </table>
-        </div>
-        ,
-        document.getElementById("app"))
+            TabelaBebidas(),
+            document.getElementById("app")
+        );
     </script>
       
    </body>
