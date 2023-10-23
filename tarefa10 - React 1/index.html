@@ -12,17 +12,23 @@
       <script src="libs/babel.js"></script>
     
     <script type="text/babel">
-        // Defina a função TabelaBebidas que retorna o HTML da tabela
+        function Cabecalho() {
+            return <h1>Minha tabela de bebidas</h1>;
+        }
+
+        
         function TabelaBebidas() {
             return (
-                <table id="tabela" border="1">
-                    <tr><th>Nome</th><th>Marca</th></tr>
-                    <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
-                </table>
+                <div>
+                    <Cabecalho /> 
+                    <table id="tabela" border="1">
+                        <tr><th>Nome</th><th>Marca</th></tr>
+                        <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+                    </table>
+                </div>
             );
         }
 
-        // Chame a função TabelaBebidas no ReactDOM.render
         ReactDOM.render(
             <TabelaBebidas />,
             document.getElementById("app")
