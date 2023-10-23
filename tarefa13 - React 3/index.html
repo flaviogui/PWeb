@@ -25,24 +25,45 @@
           );
         }
 
-        const TabelaBebidas = ({ titulo, cabecalhos }) => {
+        const TabelaConteudo = ({ conteudo }) => {
+          return (
+            <tbody>
+              {conteudo.map((linha, index) => (
+                <tr key={index}>
+                  {linha.map((celula, idx) => (
+                    <td key={idx}>{celula}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          );
+        }
+
+        const TabelaBebidas = ({ titulo, cabecalhos, conteudo }) => {
           return (
             <div>
               <h1>{titulo}</h1>
               <table id="tabela" border="1">
                 <TabelaCabecalho cabecalhos={cabecalhos} />
-                <tbody>
-                  <tr><td>Havana</td><td>Engenho Anísio Santiago</td><td>R$ 50</td></tr>
-                </tbody>
+                <TabelaConteudo conteudo={conteudo} />
               </table>
             </div>
           );
         }
 
-        const valoresCabecalhos = ["Nome", "Marca", "Preço"]
+        const valoresCabecalhos = ["Nome", "Marca", "Preço"] 
+        const valoresConteudo = [
+          ["Havana", "Engenho Anísio Santiago", "$10"],
+          ["51", "Cia. Müller de Bebidas", "$13"],
+          ["Pitu", "Indústria Pitu", "$12"]
+        ];
 
         ReactDOM.render(
-          <TabelaBebidas titulo="Minha tabela de cana" cabecalhos={valoresCabecalhos} />,
+          <TabelaBebidas
+            titulo="Minha tabela de cana"
+            cabecalhos={valoresCabecalhos}
+            conteudo={valoresConteudo}
+          />,
           document.getElementById("app")
         );
       </script>
