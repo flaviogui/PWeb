@@ -1,20 +1,13 @@
-import {Estados} from './estados';
-import {Planeta} from './planeta';
+import { Descricao } from "./descricao";
+import { Imagem } from "./imagem";
+import styles from './styles.module.css';
 
-export default function Home(){
-
+export default function Home() {
     return (
- 
-       <div>
- 
-          <h2>
- 
-            Viva Santana!
- 
-          </h2>
- 
-       </div>
- 
-    )
- 
- }
+        <div className={styles.container}>
+            <h2>A SUPER MAQUINA</h2>
+            <Descricao />
+            <Imagem />
+        </div>
+    );
+}
