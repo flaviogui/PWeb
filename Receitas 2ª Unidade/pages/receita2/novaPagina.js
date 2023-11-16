@@ -1,24 +1,30 @@
+import { Descricao } from "./descricao";
+import { Imagem } from "./imagem";
+import styles from './styles.module.css';
+
+
 export default function Principal(){
-
     return (
- 
-       <div>
- 
-          <h1>Nova Página</h1>
-          <MariaPrea/>
- 
+       <div className={styles.container}>
+          <h1>A super Maquina</h1>
+          <Imagem/>
+          <Descricao/>
+          <MariaPrea nome = "Prea" />
+          <Culpado nome = "Maria Prea"/>
        </div>
- 
     )
- 
  }
 
- export function MariaPrea(){
+ export function MariaPrea({nome}){
+   return(
+       <h2>{`Morreu Maria ${nome}...`}</h2>
+   )
+}
 
-    return (
+export function Culpado({nome}){
+   return(
+   <h2>{`A super maquina atropelou ${nome}...`}</h2>
+   )
+}
  
-       <h2>Morreu Maria Preá...</h2>
  
-    )
- 
- }
