@@ -1,5 +1,6 @@
 import { Descricao } from "./descricao";
 import { Imagem } from "./imagem";
+import { Prea } from "./imagem";
 import styles from './styles.module.css';
 
 
@@ -9,8 +10,9 @@ export default function Principal(){
           <h1>A super Maquina</h1>
           <Imagem/>
           <Descricao/>
-          <MariaPrea nome = "Prea" />
           <Culpado nome = "Maria Prea"/>
+          <Prea/>
+          <MariaPrea nome = "Prea" />
        </div>
     )
  }
