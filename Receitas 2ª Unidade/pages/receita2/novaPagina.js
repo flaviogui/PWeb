@@ -1,6 +1,6 @@
 import { Descricao } from "./descricao";
-import { Imagem } from "./imagem";
-import { Prea } from "./imagem";
+import { Imagem, Prea } from "./imagem";
+//import { Prea } from "./imagem";
 import styles from './styles.module.css';
 
 
