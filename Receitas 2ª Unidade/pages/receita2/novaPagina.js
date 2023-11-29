@@ -1,4 +1,4 @@
-import { Imagem, Prea, Descricao } from "./sobre";
+import { Carro, Prea, Descricao } from "./sobre";
 import styles from './styles.module.css';
 
 
@@ -6,7 +6,7 @@ export default function Principal(){
     return (
        <div className={styles.container}>
           <h1>A super Maquina</h1>
-          <Imagem/>
+          <Carro/>
           <Descricao/>
           <Culpado nome = "Maria Prea"/>
           <Prea/>
