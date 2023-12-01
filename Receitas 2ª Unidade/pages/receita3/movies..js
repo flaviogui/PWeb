@@ -1,19 +1,16 @@
 import { useState } from 'react';
 
-export default function Movies({ data }) {
+
+export default function Movies({ data: initialData }) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [title, setTitle] = useState('');
-  const [year, setYear] = useState('');
+  const [data, setData] = useState(initialData); 
 
   const handleSearch = async () => {
     try {
       const apiUrl = `http://www.omdbapi.com/?apikey=16a58b53`;
 
-      // Construa a URL de pesquisa com base nos parâmetros fornecidos pelo usuário
       const searchParams = new URLSearchParams();
       if (searchTerm) searchParams.set('s', searchTerm);
-      if (title) searchParams.set('t', title);
-      if (year) searchParams.set('y', year);
 
       const res = await fetch(`${apiUrl}&${searchParams.toString()}`);
       const newData = await res.json();
@@ -37,18 +34,6 @@ export default function Movies({ data }) {
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Digite a palavra-chave de pesquisa"
         />
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Digite o título do filme"
-        />
-        <input
-          type="text"
-          value={year}
-          onChange={(e) => setYear(e.target.value)}
-          placeholder="Digite o ano de produção do filme"
-        />
         <button onClick={handleSearch}>Pesquisar</button>
       </div>
 
@@ -67,6 +52,8 @@ export default function Movies({ data }) {
     </div>
   );
 }
+
+
 
 export async function getServerSideProps(context) {
   try {
