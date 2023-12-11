@@ -1,20 +1,47 @@
-import useSWR from 'swr'
-
-export default function Movies2(){
-    const {data, error} = useSWR(`http://www.omdbapi.com/?apikey=16a58b53&s=bagdad`, fetcher)    
-    if (error) return <div>falha na requisição...</div>
-    if (!data) return <div>carregando...</div>
-    return (
-        <div>
-            { data.Search.map( (m) => <div>{m.Title} --- {m.Year}</div> ) }
-        </div>
-    )    
-}
-
-
+import React, { useState } from "react";
+import useSWR from "swr";
+import MovieDetails from "./detalhe";
+import styles from "./styles.module.css"; 
 
 async function fetcher(url) {
-    const res = await fetch(url);
-    const json = await res.json();
-    return json;
+  const res = await fetch(url);
+  const json = await res.json();
+  return json;
+}
+
+export default function Movies2() {
+  const { data, error } = useSWR(
+    "https://www.omdbapi.com/?apikey=16a58b53&s=avengers",
+    fetcher
+  );
+
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  if (error) return <div>Falha na reprodução...</div>;
+  if (!data) return <div>Carregando...</div>;
+
+  if (selectedMovie) {
+    return <MovieDetails imdbID={selectedMovie.imdbID} />;
+  }
+
+  return (
+    <div className={styles["movies-container"]}>
+      {data.Search.map((m) => (
+        <div className={styles["movie-card"]} key={m.imdbID}>
+          <p></p>
+          <img src={m.Poster} alt={m.Title} width="100px"></img>
+          <p></p>
+          <a
+            href=""
+            onClick={(e) => {
+              e.preventDefault();
+              setSelectedMovie(m);
+            }}
+          >
+            {m.Title} --- {m.Year}
+          </a>
+        </div>
+      ))}
+    </div>
+  );
 }

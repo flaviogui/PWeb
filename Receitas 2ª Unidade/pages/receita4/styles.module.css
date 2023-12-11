@@ -1,0 +1,19 @@
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .movie-card {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.1);
+  }
+  
+ 
+  
